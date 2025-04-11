@@ -2,12 +2,15 @@
 <html>
   <head>
     <title><%= title %></title>
+    <link rel="stylesheet" href="/styles.css" />
   </head>
   <body>
     <h1>Message Detail</h1>
-    <p><strong><%= message.user %></strong></p>
-    <p><%= message.text %></p>
-    <p><small><%= message.added.toLocaleString() %></small></p>
-    <a href="/">Back to all messages</a>
+    <div class="details-box">
+      <p><strong><%= message.user %></strong></p>
+      <p><%= message.text %></p>
+      <p><small><%= message.added.toLocaleString() %></small></p>
+    </div>
+    <a class="details-return" href="/">Back to all messages</a>
   </body>
 </html>

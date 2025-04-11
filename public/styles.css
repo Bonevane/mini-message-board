@@ -1,0 +1,148 @@
+/* Reset some default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #0d1117;
+  color: #c9d1d9;
+  font-family: "Fira Code", monospace;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  color: #58a6ff;
+  margin-bottom: 30px;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.container {
+  border: 1px solid #30363d;
+  width: 600px;
+  padding: 20px;
+  border-radius: 6px;
+}
+
+.message {
+  border: 1px solid #30363d;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+}
+
+.message strong {
+  display: block;
+  color: #58a6ff;
+  margin-bottom: 5px;
+}
+
+.user-bar {
+  border-bottom: 2px solid #30363d;
+  margin-bottom: 8px;
+}
+
+.message .meta {
+  font-size: 0.8em;
+  color: #8b949e;
+  margin-bottom: 5px;
+}
+
+.message .details {
+  float: right;
+  font-size: 0.85em;
+  color: #58a6ff;
+  text-decoration: none;
+}
+
+.message .details:hover {
+  text-decoration: underline;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 600px;
+  margin-top: 30px;
+}
+
+form input[type="text"],
+form textarea {
+  resize: vertical;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #161b22;
+  border: 1px solid #30363d;
+  color: #c9d1d9;
+  border-radius: 6px;
+}
+
+form button {
+  background-color: #238636;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+form button:hover {
+  background-color: #2ea043;
+}
+
+.new-message-button,
+.submit-button {
+  background-color: #161b22;
+  color: #58a6ff;
+  border: 1px solid #30363d;
+  padding: 10px 15px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 6px;
+  margin-top: 30px;
+  display: inline-block;
+}
+
+.new-message-button:hover,
+.submit-button:hover {
+  background-color: #21262d;
+}
+
+.submit-button {
+  margin-top: 10px;
+}
+
+/* Message Details */
+.details-box {
+  border: 1px solid #30363d;
+  padding: 20px 30px;
+  border-radius: 4px;
+  background-color: #0d1117;
+  width: fit-content;
+  max-width: 100%;
+}
+
+.details-box p {
+  margin: 10px 0;
+  font-size: 1rem;
+}
+
+.details-box strong {
+  color: #58a6ff;
+}
+
+.details-return {
+  color: #58a6ff;
+  padding: 16px;
+  text-decoration: none;
+}
+
+.details-return:hover {
+  text-decoration: underline;
+}

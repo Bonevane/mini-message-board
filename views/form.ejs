@@ -1,16 +1,31 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>
+    <title>Create Message</title>
+    <link rel="stylesheet" href="/styles.css" />
   </head>
   <body>
-    <h1>New Message</h1>
-    <form method="POST" action="/new">
-      <label>Your Name:</label><br />
-      <input type="text" name="messageUser" required /><br />
-      <label>Your Message:</label><br />
-      <textarea name="messageText" required></textarea><br />
-      <button type="submit">Post</button>
+    <h1>Create New Message</h1>
+    <form action="/new" method="POST" class="form-container">
+      <label for="username">Username</label>
+      <input
+        type="text"
+        id="username"
+        name="messageUser"
+        placeholder="Example: john_doe"
+        required
+      />
+
+      <label for="message">Message</label>
+      <textarea
+        id="message"
+        name="messageText"
+        rows="6"
+        placeholder="What would you like to say?"
+        required
+      ></textarea>
+
+      <button type="submit" class="submit-button">Submit</button>
     </form>
   </body>
 </html>
