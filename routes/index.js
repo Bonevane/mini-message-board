@@ -3,6 +3,8 @@ const router = express.Router();
 const pool = require("../db/pool");
 
 router.get("/", async (req, res) => {
+  const client = await pool.connect();
+
   try {
     const result = await pool.query(
       "SELECT * FROM messages ORDER BY added DESC"
@@ -11,6 +13,8 @@ router.get("/", async (req, res) => {
   } catch (err) {
     console.error(err);
     res.send("Error fetching messages");
+  } finally {
+    client.release();
   }
 });
 
@@ -21,6 +25,7 @@ router.get("/new", (req, res) => {
 
 // POST /new
 router.post("/new", async (req, res) => {
+  const client = await pool.connect();
   const { messageText, messageUser } = req.body;
   try {
     await pool.query(
@@ -31,11 +36,14 @@ router.post("/new", async (req, res) => {
   } catch (err) {
     console.error(err);
     res.send("Error adding message");
+  } finally {
+    client.release();
   }
 });
 
 // GET /message/:id
 router.get("/message/:id", async (req, res) => {
+  const client = await pool.connect();
   const { id } = req.params;
   try {
     const result = await pool.query("SELECT * FROM messages WHERE id = $1", [
@@ -52,6 +60,8 @@ router.get("/message/:id", async (req, res) => {
   } catch (err) {
     console.error(err);
     res.send("Error fetching message details.");
+  } finally {
+    client.release();
   }
 });
 
