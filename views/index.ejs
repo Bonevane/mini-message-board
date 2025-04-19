@@ -10,11 +10,11 @@
       <% messages.forEach(function(message, index) { %>
       <div class="message">
         <div class="user-bar">
-          <a class="details" href="/message/<%= index %>">Details</a>
-          <strong><%= message.user %></strong>
+          <a class="details" href="/message/<%= message.id %>">Details</a>
+          <strong><%= message.user_name %></strong>
         </div>
         <div class="meta"><%= message.added.toLocaleString() %></div>
-        <div><%= message.text %></div>
+        <div><%= message.message_text %></div>
       </div>
       <% }) %>
     </div>
